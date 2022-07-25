@@ -1,0 +1,7 @@
+Jsx -
+
+Components - 
+
+Props - Usado para passar parametros de um componente pai, para um componente filho
+
+States - O estado, é o estado do componente e não da aplicação
