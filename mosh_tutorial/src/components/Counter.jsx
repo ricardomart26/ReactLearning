@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-	state = {
-		value: this.props.value
-	};
 
-	handleAdd = () => {
-		this.setState({value: this.state.value + 1});
-	}
+	// handleAdd = () => {
+	// 	this.setState({value: this.state.value + 1});
+	// }
 
-	handleRemove = () => {
-		if (this.state.value !== 0)
-			this.setState({value: this.state.value - 1});
-	}
+	// handleRemove = () => {
+	// 	if (this.state.value !== 0)
+	// 		this.setState({value: this.state.value - 1});
+	// }
 
 	render()
 	{
@@ -23,10 +20,10 @@ class Counter extends Component {
 					{this.formatValue()}
 				</span>
 
-				<button onClick={this.handleAdd} className='btn btn-secondary btn-sm m-2'>
+				<button onClick={() => this.props.onIncrement(this.props.counter)} className='btn btn-secondary btn-sm m-2'>
 					Add Item
 				</button>
-				<button onClick={this.handleRemove} className='btn btn-danger btn-sm'>
+				<button onClick={() => this.props.onRemove(this.props.counter)} className='btn btn-danger btn-sm'>
 					Remove
 				</button>
 			</div>
@@ -35,12 +32,12 @@ class Counter extends Component {
 
 	getBadgeClasses() {
 		let classes = 'badge m-2 badge-';
-		classes += (this.state.value === 0) ? 'warning' : 'primary';
+		classes += (this.props.counter.value === 0) ? 'warning' : 'primary';
 		return classes;
 	}
 
 	formatValue() {
-		const { value } = this.state;
+		const { value } = this.props.counter;
 		return value === 0 ? "Zero" : value;
 	}
 }
