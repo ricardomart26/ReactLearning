@@ -2,17 +2,13 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 
-	// handleAdd = () => {
-	// 	this.setState({value: this.state.value + 1});
-	// }
-
-	// handleRemove = () => {
-	// 	if (this.state.value !== 0)
-	// 		this.setState({value: this.state.value - 1});
-	// }
+	componentWillUnmount() {
+		console.log('Component unmounted - ' + this.props.counter.id);
+	};
 
 	render()
 	{
+		const { counter } = this.props;
 		return (
 			<div>
 				<h4>{this.props.children}</h4>
@@ -20,26 +16,40 @@ class Counter extends Component {
 					{this.formatValue()}
 				</span>
 
-				<button onClick={() => this.props.onIncrement(this.props.counter)} className='btn btn-secondary btn-sm m-2'>
+				<button 
+				onClick={() => this.props.onIncrement(counter)}
+				className='btn btn-secondary btn-sm m-2'
+				>
 					Add Item
 				</button>
-				<button onClick={() => this.props.onRemove(this.props.counter)} className='btn btn-danger btn-sm'>
+				
+				<button 
+				onClick={() => this.props.onRemove(counter)}
+				className='btn btn-danger btn-sm m-2'
+				>
 					Remove
+				</button>
+				
+				<button 
+				onClick={() => this.props.onDelete(counter)}
+				className='btn btn-danger btn-sm m-2'
+				>
+					Delete
 				</button>
 			</div>
 		);
-	}
+	};
 
 	getBadgeClasses() {
 		let classes = 'badge m-2 badge-';
 		classes += (this.props.counter.value === 0) ? 'warning' : 'primary';
 		return classes;
-	}
+	};
 
 	formatValue() {
 		const { value } = this.props.counter;
 		return value === 0 ? "Zero" : value;
-	}
+	};
 }
  
 export default Counter;

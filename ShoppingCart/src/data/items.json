@@ -1,0 +1,21 @@
+[
+	{
+		"id": 1,
+		"name": "Jasmim",
+		"price": 1200,
+		"imgUrl": "/public/assets/Esperanca.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Esperança",
+		"price": 30,
+		"imgUrl": "/public/assets/HeiMatau.jpg"
+		
+	},
+	{
+		"id": 3,
+		"name": "o hei matau",
+		"price": 600,
+		"imgUrl": "/public/assets/jasmim.jpg"
+	}
+]

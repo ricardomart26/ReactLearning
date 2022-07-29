@@ -1,16 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.css';
-import Counters from './components/Counters';
-// import Background from './components/background_img';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Counters />
-    {/* <Background /> */}
-
+    <App />
   </React.StrictMode>
 );
